@@ -1,4 +1,5 @@
 import 'package:elearning/screens/quizz.dart';
+import 'package:elearning/screens/video.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -47,7 +48,12 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: ((context) {
+                      return Video();
+                    })));
+                  },
                   child: Container(
                     alignment: Alignment.center,
                     height: 140,

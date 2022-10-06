@@ -4,6 +4,7 @@
 /// Resources used :
 /// https://blog.logrocket.com/flutter-video-player/
 
+import 'package:elearning/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -18,6 +19,15 @@ class _VideoState extends State<Video> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(actions: [
+        IconButton(
+            onPressed: (() {
+              Navigator.pop(context, MaterialPageRoute(builder: ((context) {
+                return Home();
+              })));
+            }),
+            icon: Icon(Icons.home_filled))
+      ]),
       body: Center(
         child: MyVideoPlayer(),
       ),
@@ -37,12 +47,11 @@ class _VideoPlayerState extends State<MyVideoPlayer> {
   @override
   void initState() {
     super.initState();
-    _videoPlayerController =
-        VideoPlayerController.asset('assets/video/test.mp4')
-          ..initialize().then((_) {
-            setState(() {});
-            _videoPlayerController.play();
-          });
+    _videoPlayerController = VideoPlayerController.asset('video/test1.mp4')
+      ..initialize().then((_) {
+        setState(() {});
+        _videoPlayerController.play();
+      });
   }
 
   @override
