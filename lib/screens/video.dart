@@ -47,11 +47,12 @@ class _VideoPlayerState extends State<MyVideoPlayer> {
   @override
   void initState() {
     super.initState();
-    _videoPlayerController = VideoPlayerController.asset('video/test1.mp4')
-      ..initialize().then((_) {
-        setState(() {});
-        _videoPlayerController.play();
-      });
+    _videoPlayerController =
+        VideoPlayerController.asset('assets/video/test.mp4')
+          ..initialize().then((_) {
+            setState(() {});
+            _videoPlayerController.play();
+          });
   }
 
   @override
