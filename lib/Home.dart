@@ -1,3 +1,4 @@
+import 'package:elearning/screens/pdf.dart';
 import 'package:elearning/screens/quizz.dart';
 import 'package:flutter/material.dart';
 
@@ -82,7 +83,12 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return PdfBook();
+                    }));
+                  },
                   child: Container(
                     alignment: Alignment.center,
                     height: 140,
