@@ -1,9 +1,10 @@
+import 'package:elearning/screens/quizz.dart';
 import 'package:flutter/material.dart';
 
 import 'Home.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     home: MyApp(),
     debugShowCheckedModeBanner: false,
   ));
@@ -14,6 +15,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Home();
+    return const Home();
   }
 }
