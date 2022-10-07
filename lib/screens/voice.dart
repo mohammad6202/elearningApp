@@ -47,7 +47,7 @@ class Voice extends StatelessWidget {
                     children: [
                       IconButton(
                         iconSize: _ICON_SIZE,
-                        icon: Icon(Icons.start),
+                        icon: Icon(Icons.play_arrow),
                         onPressed: () {
                           player.play(AssetSource(_Conversation
                               .conversations[index]._assertSource));
