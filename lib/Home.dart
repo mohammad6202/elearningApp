@@ -1,6 +1,7 @@
 import 'package:elearning/screens/pdf.dart';
 import 'package:elearning/screens/quizz.dart';
 import 'package:elearning/screens/video.dart';
+import 'package:elearning/screens/voice.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -69,7 +70,12 @@ class _HomeState extends State<Home> {
                   width: 10,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return Voice();
+                    }));
+                  },
                   child: Container(
                     alignment: Alignment.center,
                     height: 140,
