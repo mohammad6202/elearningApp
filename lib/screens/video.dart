@@ -7,6 +7,7 @@
 
 import 'package:elearning/Home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
 String videoAssertPath = 'assets/video/test.mp4';
@@ -168,7 +169,7 @@ class _VideoPlayerState extends State<_VideoPlayer> {
             alignment: Alignment.bottomCenter,
             children: <Widget>[
               VideoPlayer(_controller),
-              _ControlsOverlay(controller: _controller),
+              _ControlsOverlay(videoPlayerController: _controller),
               VideoProgressIndicator(_controller, allowScrubbing: true),
             ],
           ),
@@ -179,7 +180,7 @@ class _VideoPlayerState extends State<_VideoPlayer> {
 }
 
 class _ControlsOverlay extends StatelessWidget {
-  const _ControlsOverlay({Key? key, required this.controller})
+  const _ControlsOverlay({Key? key, required this.videoPlayerController})
       : super(key: key);
 
   static const List<double> _examplePlaybackRates = <double>[
@@ -192,7 +193,7 @@ class _ControlsOverlay extends StatelessWidget {
     5.0,
   ];
 
-  final VideoPlayerController controller;
+  final VideoPlayerController videoPlayerController;
 
   @override
   Widget build(BuildContext context) {
@@ -201,7 +202,7 @@ class _ControlsOverlay extends StatelessWidget {
         AnimatedSwitcher(
           duration: const Duration(milliseconds: 50),
           reverseDuration: const Duration(milliseconds: 200),
-          child: controller.value.isPlaying
+          child: videoPlayerController.value.isPlaying
               ? const SizedBox.shrink()
               : Container(
                   color: Colors.black26,
@@ -217,16 +218,18 @@ class _ControlsOverlay extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            controller.value.isPlaying ? controller.pause() : controller.play();
+            videoPlayerController.value.isPlaying
+                ? videoPlayerController.pause()
+                : videoPlayerController.play();
           },
         ),
         Align(
           alignment: Alignment.topRight,
           child: PopupMenuButton<double>(
-            initialValue: controller.value.playbackSpeed,
+            initialValue: videoPlayerController.value.playbackSpeed,
             tooltip: 'Playback speed',
             onSelected: (double speed) {
-              controller.setPlaybackSpeed(speed);
+              videoPlayerController.setPlaybackSpeed(speed);
             },
             itemBuilder: (BuildContext context) {
               return <PopupMenuItem<double>>[
@@ -245,7 +248,7 @@ class _ControlsOverlay extends StatelessWidget {
                 vertical: 12,
                 horizontal: 16,
               ),
-              child: Text('${controller.value.playbackSpeed}x'),
+              child: Text('${videoPlayerController.value.playbackSpeed}x'),
             ),
           ),
         ),
@@ -296,10 +299,7 @@ class _PlayerVideoAndPopPageState extends State<_PlayerVideoAndPopPage> {
           future: started(),
           builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
             if (snapshot.data ?? false) {
-              return AspectRatio(
-                aspectRatio: _videoPlayerController.value.aspectRatio,
-                child: VideoPlayer(_videoPlayerController),
-              );
+              return _VideoPlayer();
             } else {
               return const Text('waiting for video to load');
             }
