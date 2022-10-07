@@ -20,29 +20,29 @@ class _HomeState extends State<Home> {
         alignment: Alignment.topCenter,
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            CircleAvatar(
+            const CircleAvatar(
               backgroundColor: Color.fromARGB(255, 251, 235, 235),
               radius: 50,
               child: Image(image: AssetImage("images/av.png")),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Wlcome to the English World",
               style: TextStyle(fontSize: 18),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            Text(
+            const Text(
               "Choose the way of learning",
               style: TextStyle(fontSize: 30),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Row(
@@ -62,10 +62,10 @@ class _HomeState extends State<Home> {
                     decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(10)),
-                    child: Text("Videos"),
+                    child: const Text("Videos"),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 GestureDetector(
@@ -77,12 +77,12 @@ class _HomeState extends State<Home> {
                     decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(10)),
-                    child: Text("Audios"),
+                    child: const Text("Audios"),
                   ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -102,17 +102,17 @@ class _HomeState extends State<Home> {
                     decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(10)),
-                    child: Text("Books"),
+                    child: const Text("Books"),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return Quizz();
+                      return const Quizz();
                     }));
                   },
                   child: Container(
@@ -122,7 +122,7 @@ class _HomeState extends State<Home> {
                     decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(10)),
-                    child: Text("Quizzes"),
+                    child: const Text("Quizzes"),
                   ),
                 )
               ],
