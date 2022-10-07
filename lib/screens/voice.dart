@@ -40,13 +40,13 @@ class Voice extends StatelessWidget {
             label: Text(''),
           ),
           Padding(padding: EdgeInsets.all(25)),
-          ElevatedButton.icon(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
-              icon: Icon(Icons.stop),
-              onPressed: () {
-                player.stop();
-              },
-              label: Text('')),
+          IconButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
+            icon: Icon(Icons.stop),
+            onPressed: () {
+              player.stop();
+            },
+          ),
           Padding(padding: EdgeInsets.all(25)),
           ElevatedButton.icon(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
