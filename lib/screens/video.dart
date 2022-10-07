@@ -33,7 +33,7 @@ class Video extends StatelessWidget {
         return Scaffold(
           key: const ValueKey<String>('home_page'),
           appBar: AppBar(
-            title: const Text('Videos Section'),
+            title: const Text('Videos Zone'),
             actions: <Widget>[
               IconButton(
                 key: const ValueKey<String>('push_tab'),
