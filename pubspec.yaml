@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   video_player: ^2.4.7 # by Ramzi
   syncfusion_flutter_pdfviewer: ^20.3.48 #AK
+  audioplayers: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +64,7 @@ flutter:
   assets:
     - images/
     - assets/book/learn.pdf
+    - assets/voice/test.mp3
     - assets/video/test.mp4
     - assets/video/video_cover.mp4
     - assets/video/Forget-to-do-vs-forget-doing.mp4
