@@ -2,15 +2,17 @@ import 'package:elearning/components/alerts.dart';
 import 'package:flutter/material.dart';
 
 class Question extends StatefulWidget {
-  const Question(
-      {super.key,
-      required this.question,
-      required this.rightanswer,
-      required this.answer_1,
-      required this.answer_2,
-      required this.answer_3,
-      required this.answer_4,
-      required this.quesNo});
+  const Question({
+    super.key,
+    required this.question,
+    required this.rightanswer,
+    required this.answer_1,
+    required this.answer_2,
+    required this.answer_3,
+    required this.answer_4,
+    required this.quesNo,
+    required this.assetImage,
+  });
 
   final String? question;
   final String? answer_1;
@@ -19,6 +21,8 @@ class Question extends StatefulWidget {
   final String? answer_4;
   final String? rightanswer;
   final String? quesNo;
+  final AssetImage assetImage;
+
   @override
   State<Question> createState() => _QuestionState();
 }
@@ -34,7 +38,7 @@ class _QuestionState extends State<Question> {
           const SizedBox(
             height: 20,
           ),
-          const Image(height: 150, image: AssetImage("images/Q.webp")),
+           Image(height: 150, image: widget.assetImage),
           Text(
             "Queston No ${widget.quesNo.toString()}",
             textAlign: TextAlign.start,

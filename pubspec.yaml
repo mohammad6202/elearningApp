@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   video_player: ^2.4.7 # by Ramzi
   syncfusion_flutter_pdfviewer: ^20.3.48 #AK
+  audioplayers: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -62,9 +63,19 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/
-    - assets/video/test.mp4
     - assets/book/learn.pdf
-  
+    - assets/voice/test.mp3
+    - assets/voice/1.mp3
+    - assets/voice/2.mp3
+    - assets/voice/3.mp3
+    - assets/voice/4.mp3
+    - assets/voice/5.mp3
+    - assets/video/test.mp4
+    - assets/video/video_cover.mp4
+    - assets/video/Forget-to-do-vs-forget-doing.mp4
+    - assets/video/Make-do.mp4
+    - assets/video/Ways-to-say-sorry-Part-1.mp4
+    - assets/video/Ways-to-say-sorry-Part-2.mp4
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
