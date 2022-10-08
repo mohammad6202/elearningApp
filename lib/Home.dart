@@ -19,74 +19,58 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     var buttonBoxDecoration = BoxDecoration(
-      gradient: LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [
-          Color.fromARGB(255, 20, 224, 255),
-          Color.fromARGB(255, 5, 159, 255),
-          Color.fromARGB(255, 0, 51, 255),
-        ],
-      ),
+      //
+      color: Colors.cyan.shade400,
       borderRadius: BorderRadius.circular(10),
     );
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-          colors: [
-            Color(0xff03a1e9),
-            Color(0xff085795),
-          ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-        )),
+        decoration: BoxDecoration(color: const Color.fromARGB(255, 84, 83, 83)),
         alignment: Alignment.topCenter,
         child: Column(
           children: [
             const SizedBox(
               height: 60,
             ),
-            const CircleAvatar(
-              backgroundColor: Color.fromARGB(255, 251, 235, 235),
-              radius: 50,
-              child: Image(image: AssetImage("images/av.png")),
-            ),
+            SizedBox(
+                height: 150,
+                width: 150,
+                child: Image(image: AssetImage("images/ee.png"))),
             const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              "Wlcome to the English World",
-              style: TextStyle(fontSize: 18),
-            ),
-            const SizedBox(
-              height: 50,
+              height: 30,
             ),
             const Text(
               "Choose the way of learning",
-              style: TextStyle(fontSize: 30),
+              style: TextStyle(fontSize: 30, color: Colors.white),
             ),
             const SizedBox(
-              height: 50,
+              height: 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: ((context) {
-                      return Video();
-                    })));
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 140,
-                    width: 140,
-                    decoration: buttonBoxDecoration,
-                    child: const Text("Videos"),
-                  ),
-                ),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: ((context) {
+                        return Video();
+                      })));
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 140,
+                      width: 140,
+                      decoration: buttonBoxDecoration,
+                      child: Column(
+                        children: [
+                          Image(image: AssetImage("images/dd.png")),
+                          const Text(
+                            "Videos",
+                            textAlign: TextAlign.start,
+                          ),
+                        ],
+                      ),
+                    )),
                 const SizedBox(
                   width: 10,
                 ),
@@ -102,7 +86,15 @@ class _HomeState extends State<Home> {
                     height: 140,
                     width: 140,
                     decoration: buttonBoxDecoration,
-                    child: const Text("Audios"),
+                    child: Column(
+                      children: [
+                        Image(height: 115, image: AssetImage("images/aa.png")),
+                        const Text(
+                          "Audios",
+                          textAlign: TextAlign.start,
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
@@ -125,7 +117,15 @@ class _HomeState extends State<Home> {
                     height: 140,
                     width: 140,
                     decoration: buttonBoxDecoration,
-                    child: const Text("Books"),
+                    child: Column(
+                      children: [
+                        Image(height: 115, image: AssetImage("images/b.png")),
+                        const Text(
+                          "Books",
+                          textAlign: TextAlign.start,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -143,7 +143,15 @@ class _HomeState extends State<Home> {
                     height: 140,
                     width: 140,
                     decoration: buttonBoxDecoration,
-                    child: const Text("Quizzes"),
+                    child: Column(
+                      children: [
+                        Image(height: 115, image: AssetImage("images/l.png")),
+                        const Text(
+                          "Quizz",
+                          textAlign: TextAlign.start,
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
@@ -162,7 +170,16 @@ class _HomeState extends State<Home> {
                 height: 140,
                 width: 290,
                 decoration: buttonBoxDecoration,
-                child: const Text("Play a Game"),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Play a Game",
+                      textAlign: TextAlign.start,
+                    ),
+                    Image(image: AssetImage("images/gg.gif")),
+                  ],
+                ),
               ),
             )
           ],
