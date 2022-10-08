@@ -1,7 +1,7 @@
+import 'package:elearning/screens/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:myapp/Home.dart';
-import 'package:myapp/screens/splash.dart';
+
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);

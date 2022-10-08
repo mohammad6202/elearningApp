@@ -1,8 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:myapp/Home.dart';
-import 'package:myapp/screens/onBoarding.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../Home.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
