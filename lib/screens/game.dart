@@ -24,12 +24,11 @@ class _GameState extends State<Game> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: Icon(
-          Icons.arrow_back_rounded,
+        iconTheme: IconThemeData(
           size: 30,
           color: Colors.red,
         ),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.white,
         elevation: 0,
         title: Text(
           titleItemText.text,
