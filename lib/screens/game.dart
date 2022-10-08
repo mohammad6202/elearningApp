@@ -14,8 +14,9 @@ var itemName = TextEditingController(text: "xx");
 class _GameState extends State<Game> {
   @override
   Widget build(BuildContext context) {
-    double screenMaxWidth = 500;
-    double screenHeight = MediaQuery.of(context).size.height;
+    double screenMaxWidth = MediaQuery.of(context).size.width > 500
+        ? 500
+        : MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -33,22 +34,26 @@ class _GameState extends State<Game> {
             children: [
               Stack(
                 children: [
-                  Image(
-                    fit: BoxFit.contain,
-                    image: NetworkImage(
-                        "http://www.clipartbest.com/cliparts/jTx/a7M/jTxa7MABc.jpg"),
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Image(
+                      fit: BoxFit.contain,
+                      image: NetworkImage(
+                          "http://www.clipartbest.com/cliparts/jTx/a7M/jTxa7MABc.jpg"),
+                    ),
                   ),
                   Positioned(
-                    top: 320,
-                    height: 160,
-                    left: 230,
-                    width: 80,
+                    top: screenMaxWidth / 1.5625,
+                    height: 260,
+                    left: screenMaxWidth / 2.2222,
+                    width: screenMaxWidth / 6.25,
                     child: GestureDetector(
                       child: Container(color: Colors.red.withAlpha(130)),
                       onTap: () {
                         print("Rabit");
                         setState(() {
                           itemName.text = "Rabit";
+                          print(MediaQuery.of(context).size.width);
                         });
                       },
                     ),
