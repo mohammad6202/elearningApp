@@ -18,6 +18,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return OnBoardingScreen();
   }
+=======
+    return const Home();
+  } // ramzi comment
+>>>>>>> 7155920434b4e3bba64bc86dabe5aed3ab0eda48
 }
