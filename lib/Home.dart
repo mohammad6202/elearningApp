@@ -25,7 +25,15 @@ class _HomeState extends State<Home> {
     );
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(color: const Color.fromARGB(255, 84, 83, 83)),
+        decoration: BoxDecoration(
+            //color: const Color.fromARGB(255, 56, 54, 54)
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+              Color.fromARGB(255, 56, 54, 54),
+              Color.fromARGB(255, 223, 220, 220),
+            ])),
         alignment: Alignment.topCenter,
         child: Column(
           children: [
@@ -39,10 +47,12 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              "Choose the way of learning",
-              style: TextStyle(fontSize: 30, color: Colors.white),
-            ),
+            const Text("Choose the Way of learning",
+                style: TextStyle(
+                  fontSize: 28,
+                  color: Colors.white,
+                  fontFamily: 'Cinzel',
+                )),
             const SizedBox(
               height: 20,
             ),
@@ -66,6 +76,8 @@ class _HomeState extends State<Home> {
                           Image(image: AssetImage("images/dd.png")),
                           const Text(
                             "Videos",
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
                             textAlign: TextAlign.start,
                           ),
                         ],
@@ -91,6 +103,8 @@ class _HomeState extends State<Home> {
                         Image(height: 115, image: AssetImage("images/aa.png")),
                         const Text(
                           "Audios",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
                           textAlign: TextAlign.start,
                         ),
                       ],
@@ -122,6 +136,8 @@ class _HomeState extends State<Home> {
                         Image(height: 115, image: AssetImage("images/b.png")),
                         const Text(
                           "Books",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
                           textAlign: TextAlign.start,
                         ),
                       ],
@@ -148,6 +164,8 @@ class _HomeState extends State<Home> {
                         Image(height: 115, image: AssetImage("images/l.png")),
                         const Text(
                           "Quizz",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
                           textAlign: TextAlign.start,
                         ),
                       ],
@@ -175,6 +193,8 @@ class _HomeState extends State<Home> {
                   children: [
                     const Text(
                       "Play a Game",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.start,
                     ),
                     Image(image: AssetImage("images/gg.gif")),

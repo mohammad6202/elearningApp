@@ -32,8 +32,14 @@ class _QuestionState extends State<Question> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:
-          const BoxDecoration(color: const Color.fromARGB(255, 56, 54, 54)),
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+            Color.fromARGB(255, 56, 54, 54),
+            Color.fromARGB(255, 223, 220, 220),
+          ])),
       child: ListView(
         children: [
           const SizedBox(

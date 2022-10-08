@@ -19,16 +19,13 @@ class _QuizzState extends State<Quizz> {
         child: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            actions: [
-              IconButton(
-                  onPressed: () {
-                    Navigator.pop(context,
-                        MaterialPageRoute(builder: ((context) {
-                      return const Home();
-                    })));
-                  },
-                  icon: const Icon(Icons.home_filled))
-            ],
+            leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context, MaterialPageRoute(builder: ((context) {
+                    return const Home();
+                  })));
+                },
+                icon: const Icon(Icons.home_filled)),
             backgroundColor: Color.fromARGB(255, 27, 27, 28),
             centerTitle: true,
             title: const Text("Fun Quizz"),
