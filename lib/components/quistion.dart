@@ -33,15 +33,8 @@ class _QuestionState extends State<Question> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-              colors: [
-            Color.fromARGB(255, 14, 110, 255),
-            Color.fromARGB(255, 23, 29, 203),
-            Color.fromARGB(255, 5, 27, 124),
-          ])),
+      decoration:
+          const BoxDecoration(color: const Color.fromARGB(255, 56, 54, 54)),
       child: ListView(
         children: [
           const SizedBox(
@@ -69,14 +62,15 @@ class _QuestionState extends State<Question> {
             height: 100,
             width: 250,
             decoration: BoxDecoration(
-                color: contColor, borderRadius: BorderRadius.circular(20)),
+                color: const Color.fromARGB(255, 84, 83, 83),
+                borderRadius: BorderRadius.circular(20)),
             child: Text(
               widget.question.toString(),
               style: const TextStyle(fontSize: 25, color: Colors.white),
             ),
           ),
           const SizedBox(
-            height: 30,
+            height: 25,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             GestureDetector(
@@ -98,7 +92,15 @@ class _QuestionState extends State<Question> {
               child: Container(
                   padding: const EdgeInsets.only(left: 20),
                   decoration: BoxDecoration(
-                      color: contColor,
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 135, 171, 255),
+                            Color.fromARGB(255, 63, 77, 151),
+                            Color.fromARGB(255, 95, 149, 255)
+                          ]),
+                      // color: contColor,
                       borderRadius: BorderRadius.circular(30)),
                   alignment: Alignment.center,
                   height: 110,
@@ -130,7 +132,15 @@ class _QuestionState extends State<Question> {
               child: Container(
                   padding: const EdgeInsets.only(left: 20),
                   decoration: BoxDecoration(
-                      color: contColor,
+                      // color: contColor,
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 135, 171, 255),
+                            Color.fromARGB(255, 63, 77, 151),
+                            Color.fromARGB(255, 95, 149, 255)
+                          ]),
                       borderRadius: BorderRadius.circular(30)),
                   alignment: Alignment.center,
                   height: 110,
@@ -204,7 +214,15 @@ class _QuestionState extends State<Question> {
               child: Container(
                   padding: const EdgeInsets.only(left: 20),
                   decoration: BoxDecoration(
-                      color: contColor,
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 135, 171, 255),
+                            Color.fromARGB(255, 63, 77, 151),
+                            Color.fromARGB(255, 95, 149, 255)
+                          ]),
+                      // color: contColor,
                       borderRadius: BorderRadius.circular(30)),
                   alignment: Alignment.center,
                   height: 110,

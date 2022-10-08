@@ -29,7 +29,7 @@ class _QuizzState extends State<Quizz> {
                   },
                   icon: const Icon(Icons.home_filled))
             ],
-            backgroundColor: Color.fromARGB(255, 5, 27, 124),
+            backgroundColor: Color.fromARGB(255, 27, 27, 28),
             centerTitle: true,
             title: const Text("Fun Quizz"),
             bottom: const TabBar(tabs: [
