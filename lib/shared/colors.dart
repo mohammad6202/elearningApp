@@ -7,7 +7,21 @@ enum btn_colors { blue, red, green, orange }
 /// To add any color, make sure its [STATIC].
 /// To use a color, call it [MyColors.colorTest]
 class MyColors {
-  // static Colors colorTest = Colors.redAccent;
+  static BoxDecoration background_BoxDecoration() {
+    return BoxDecoration(
+      gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            // Color.fromARGB(255, 56, 54, 54),
+            // Color.fromARGB(255, 223, 220, 220),
+
+            Colors.grey.shade800,
+            Colors.grey.shade500,
+          ]),
+    );
+  }
+
   static List<Color> getMaterialColor_BasedOnENum(btn_colors colorname) {
     if (colorname == btn_colors.blue) {
       return [Colors.blue.shade200, Colors.blue, Colors.blue.shade400];
