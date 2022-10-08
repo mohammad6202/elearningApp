@@ -28,43 +28,11 @@ class _HomeState extends State<Home> {
               spacing: 14,
               runSpacing: 20,
               children: [
-                ElevatedButton(
-                  onPressed: () => goTo(Screens.video, context),
-                  child: _BtnContent(
-                    screenName: Screens.video,
-                    imageType: "gif",
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () => goTo(Screens.voice, context),
-                  child: _BtnContent(
-                    screenName: Screens.voice,
-                    imageType: "gif",
-                  ),
-                ),
-
-                ElevatedButton(
-                  onPressed: () => goTo(Screens.book, context),
-                  child: _BtnContent(
-                    screenName: Screens.book,
-                    imageType: "gif",
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () => goTo(Screens.quiz, context),
-                  child: _BtnContent(
-                    screenName: Screens.quiz,
-                    imageType: "gif",
-                  ),
-                ),
-                // Game ElevatedButton
-                ElevatedButton(
-                  onPressed: () => goTo(Screens.game, context),
-                  child: _BtnContent(
-                    screenName: Screens.game,
-                    imageType: "gif",
-                  ),
-                ),
+                _elevatedButton(Screens.video, context),
+                _elevatedButton(Screens.voice, context),
+                _elevatedButton(Screens.book, context),
+                _elevatedButton(Screens.quiz, context),
+                _elevatedButton(Screens.game, context),
               ],
             ),
           ],
@@ -100,7 +68,7 @@ void goTo(Screens screenName, BuildContext context) {
 
 SizedBox _BtnContent({
   required Screens screenName,
-  String imageType = "png",
+  String imageType = "gif",
   double btnWidth = 140,
   double btnHeight = 140,
 }) {
