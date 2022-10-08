@@ -4,4 +4,5 @@ import 'package:flutter/material.dart';
 /// To use a color, call it [MyColors.colorTest]
 class myColors {
   static Color colorTest = Colors.redAccent;
+  static Color buttonBackground = Colors.black;
 }
