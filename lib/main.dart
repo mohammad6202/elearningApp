@@ -11,7 +11,11 @@ import 'Home.dart';
 
 void main() {
   runApp(MaterialApp(
-    theme: ThemeData(),
+    theme: ThemeData(
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: _buttonStyle,
+      ),
+    ),
     themeMode: ThemeMode.dark,
     home: const MyApp(),
     debugShowCheckedModeBanner: false,
@@ -43,3 +47,12 @@ enum Screens {
   quiz,
   game,
 }
+
+ButtonStyle _buttonStyle = ElevatedButton.styleFrom(
+  shadowColor: Colors.blue,
+  elevation: 10,
+  side: const BorderSide(color: Colors.white, width: 1.4),
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.circular(30),
+  ),
+);

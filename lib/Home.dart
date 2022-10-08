@@ -35,10 +35,9 @@ class _HomeState extends State<Home> {
                 // Game ElevatedButton
                 ElevatedButton(
                   onPressed: () => goTo(Screens.game, context),
-                  child: _HomeBtn(
+                  child: _BtnContent(
                     screenName: Screens.game,
                     imageType: "gif",
-                    btnWidth: 300,
                   ),
                 ),
               ],
@@ -66,7 +65,7 @@ final _homeText = Padding(
 ElevatedButton _elevatedButton(Screens screenName, BuildContext context) {
   return ElevatedButton(
     onPressed: () => goTo(screenName, context),
-    child: _HomeBtn(screenName: screenName),
+    child: _BtnContent(screenName: screenName),
   );
 }
 
@@ -74,7 +73,7 @@ void goTo(Screens screenName, BuildContext context) {
   Navigator.pushNamed(context, screenName.name);
 }
 
-SizedBox _HomeBtn({
+SizedBox _BtnContent({
   required Screens screenName,
   String imageType = "png",
   double btnWidth = 140,
