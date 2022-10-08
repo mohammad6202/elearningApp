@@ -1,8 +1,11 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:elearning/screens/pdf.dart';
 import 'package:elearning/screens/quizz.dart';
 import 'package:elearning/screens/video.dart';
 import 'package:elearning/screens/voice.dart';
 import 'package:flutter/material.dart';
+import 'package:elearning/shared/colors.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -14,10 +17,30 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    var buttonBoxDecoration = BoxDecoration(
+      gradient: LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [
+          Color.fromARGB(255, 20, 224, 255),
+          Color.fromARGB(255, 5, 159, 255),
+          Color.fromARGB(255, 0, 51, 255),
+        ],
+      ),
+      borderRadius: BorderRadius.circular(10),
+    );
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        // color: Colors.pink.shade200,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+          colors: [
+            Color(0xff03a1e9),
+            Color(0xff085795),
+          ],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+        )),
         alignment: Alignment.topCenter,
         child: Column(
           children: [
@@ -60,9 +83,7 @@ class _HomeState extends State<Home> {
                     alignment: Alignment.center,
                     height: 140,
                     width: 140,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10)),
+                    decoration: buttonBoxDecoration,
                     child: const Text("Videos"),
                   ),
                 ),
@@ -80,9 +101,7 @@ class _HomeState extends State<Home> {
                     alignment: Alignment.center,
                     height: 140,
                     width: 140,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10)),
+                    decoration: buttonBoxDecoration,
                     child: const Text("Audios"),
                   ),
                 )
@@ -105,9 +124,7 @@ class _HomeState extends State<Home> {
                     alignment: Alignment.center,
                     height: 140,
                     width: 140,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10)),
+                    decoration: buttonBoxDecoration,
                     child: const Text("Books"),
                   ),
                 ),
@@ -125,9 +142,7 @@ class _HomeState extends State<Home> {
                     alignment: Alignment.center,
                     height: 140,
                     width: 140,
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(10)),
+                    decoration: buttonBoxDecoration,
                     child: const Text("Quizzes"),
                   ),
                 )

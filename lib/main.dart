@@ -1,4 +1,3 @@
-import 'package:elearning/screens/quizz.dart';
 import 'package:flutter/material.dart';
 
 import 'Home.dart';
@@ -16,5 +15,5 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Home();
-  }// ramzi comment
+  } // ramzi comment
 }
