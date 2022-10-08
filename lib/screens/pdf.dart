@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
+import '../Home.dart';
+
 /// Represents Homepage for Navigation
 class PdfBook extends StatefulWidget {
   @override
@@ -19,6 +21,14 @@ class _PdfBook extends State<PdfBook> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+            onPressed: (() {
+              Navigator.pop(context, MaterialPageRoute(builder: (context) {
+                return Home();
+              }));
+            }),
+            icon: Icon(Icons.home_filled)),
         backgroundColor: Colors.black87,
         centerTitle: true,
         title: const Text('English e-Book'),

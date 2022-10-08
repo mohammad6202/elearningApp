@@ -33,6 +33,16 @@ class Video extends StatelessWidget {
         return Scaffold(
           key: const ValueKey<String>('home_page'),
           appBar: AppBar(
+            centerTitle: true,
+            automaticallyImplyLeading: false,
+            leading: IconButton(
+                onPressed: (() {
+                  Navigator.pop(context, MaterialPageRoute(builder: (context) {
+                    return Home();
+                  }));
+                }),
+                icon: Icon(Icons.home_filled)),
+            backgroundColor: Color.fromARGB(255, 27, 27, 28),
             title: const Text('Videos Zone'),
             actions: <Widget>[
               IconButton(
@@ -78,29 +88,39 @@ class Video extends StatelessWidget {
 class _VideosList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        _VideoListCard(
-          context: context,
-          title: "Forget to do vs forget doing",
-          videoPath: "assets/video/Forget-to-do-vs-forget-doing.mp4",
-        ),
-        _VideoListCard(
-          context: context,
-          title: "Make & Do",
-          videoPath: "assets/video/Make-do.mp4",
-        ),
-        _VideoListCard(
-          context: context,
-          title: "Ways to say 'sorry' Part 1",
-          videoPath: "assets/video/Ways-to-say-sorry-Part-1.mp4",
-        ),
-        _VideoListCard(
-          context: context,
-          title: "Ways to say 'sorry' Part 2",
-          videoPath: "assets/video/Ways-to-say-sorry-Part-2.mp4",
-        ),
-      ],
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+            Color.fromARGB(255, 56, 54, 54),
+            Color.fromARGB(255, 223, 220, 220),
+          ])),
+      child: ListView(
+        children: [
+          _VideoListCard(
+            context: context,
+            title: "Forget to do vs forget doing",
+            videoPath: "assets/video/Forget-to-do-vs-forget-doing.mp4",
+          ),
+          _VideoListCard(
+            context: context,
+            title: "Make & Do",
+            videoPath: "assets/video/Make-do.mp4",
+          ),
+          _VideoListCard(
+            context: context,
+            title: "Ways to say 'sorry' Part 1",
+            videoPath: "assets/video/Ways-to-say-sorry-Part-1.mp4",
+          ),
+          _VideoListCard(
+            context: context,
+            title: "Ways to say 'sorry' Part 2",
+            videoPath: "assets/video/Ways-to-say-sorry-Part-2.mp4",
+          ),
+        ],
+      ),
     );
   }
 }
@@ -160,19 +180,26 @@ class _VideoPlayerState extends State<_VideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        child: AspectRatio(
-          aspectRatio: _controller.value.aspectRatio,
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            children: <Widget>[
-              VideoPlayer(_controller),
-              _ControlsOverlay(videoPlayerController: _controller),
-              VideoProgressIndicator(_controller, allowScrubbing: true),
-            ],
-          ),
+    return Container(
+      height: double.infinity,
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+            Color.fromARGB(255, 56, 54, 54),
+            Color.fromARGB(255, 223, 220, 220),
+          ])),
+      padding: const EdgeInsets.all(20),
+      child: AspectRatio(
+        aspectRatio: _controller.value.aspectRatio,
+        child: Stack(
+          alignment: Alignment.bottomCenter,
+          children: <Widget>[
+            VideoPlayer(_controller),
+            _ControlsOverlay(videoPlayerController: _controller),
+            VideoProgressIndicator(_controller, allowScrubbing: true),
+          ],
         ),
       ),
     );

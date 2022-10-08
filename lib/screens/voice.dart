@@ -5,6 +5,8 @@ import 'package:audioplayers/audioplayers.dart';
 
 import 'dart:async';
 
+import '../Home.dart';
+
 const double _ICON_SIZE = 30;
 final player = AudioPlayer();
 
@@ -15,8 +17,18 @@ class Voice extends StatelessWidget {
   Widget build(BuildContext context) {
     _initializeLocalConvos();
     return Scaffold(
-      backgroundColor: Colors.black12,
+      backgroundColor: Color.fromARGB(255, 56, 54, 54),
       appBar: AppBar(
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+            onPressed: (() {
+              Navigator.pop(context, MaterialPageRoute(builder: (context) {
+                return Home();
+              }));
+            }),
+            icon: Icon(Icons.home_filled)),
+        backgroundColor: Color.fromARGB(255, 27, 27, 28),
         title: Text("Voice Zone"),
       ),
       body: ListView.builder(

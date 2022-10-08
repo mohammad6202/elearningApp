@@ -1,4 +1,5 @@
 import 'package:elearning/screens/onBoarding.dart';
+import 'package:elearning/screens/splash.dart';
 import 'package:flutter/material.dart';
 
 import 'Home.dart';
@@ -16,6 +17,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Home();
+    return const OnBoardingScreen();
   }
 }

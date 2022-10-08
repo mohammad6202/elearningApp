@@ -37,35 +37,38 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Stack(
+        backgroundColor: Color.fromARGB(255, 56, 54, 54),
+        body: Column(
           children: [
-            Positioned(
-              bottom: 500,
-              left: 100,
-              right: 100,
-              child: Image.asset('images/logo.png'),
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              child: Image.asset('images/ee.png'),
+            ),
+            SizedBox(
+              height: 50,
             ),
             Column(
               children: [
                 SizedBox(
-                  height: 250,
+                  height: 50,
                 ),
-                Column(
-                  children: [
-                    Center(
-                      child: Text(
-                        "E-Learn App",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.indigo,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                Center(
+                  child: Text(
+                    "E-Learn App",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
                     ),
-                    Image(image: AssetImage("images/loading.gif")),
-                  ],
+                  ),
                 ),
+                Image(
+                    width: 200,
+                    height: 200,
+                    image: AssetImage("images/loadingN-unscreen.gif")),
               ],
             ),
           ],
