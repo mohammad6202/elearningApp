@@ -116,4 +116,16 @@ void _initializeLocalConvos() {
     conversationTitle: "Conversation 5 : Family Trip",
     assertSource: "voice/5.mp3",
   );
+  _Conversation fConvo = _Conversation(
+    conversationTitle: "Conversation 6 : Buying A Plane Ticket",
+    assertSource: "voice/6.mp3",
+  );
+  _Conversation xConvo = _Conversation(
+    conversationTitle: "Conversation 7 : Visiting Fmialy",
+    assertSource: "voice/7.mp3",
+  );
+  _Conversation lConvo = _Conversation(
+    conversationTitle: "Conversation 8 : I'm A Student",
+    assertSource: "voice/8.mp3",
+  );
 }

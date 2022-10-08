@@ -70,6 +70,9 @@ flutter:
     - assets/voice/3.mp3
     - assets/voice/4.mp3
     - assets/voice/5.mp3
+    - assets/voice/6.mp3
+    - assets/voice/7.mp3
+    - assets/voice/8.mp3
     - assets/video/test.mp4
     - assets/video/video_cover.mp4
     - assets/video/Forget-to-do-vs-forget-doing.mp4
