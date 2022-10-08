@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+
+final audioPlayer = AudioPlayer();
 
 class Game extends StatefulWidget {
   const Game({super.key});
@@ -9,7 +12,7 @@ class Game extends StatefulWidget {
   State<Game> createState() => _GameState();
 }
 
-var itemName = TextEditingController(text: "xx");
+var itemName = TextEditingController(text: "Click To Learn 😀");
 
 class _GameState extends State<Game> {
   @override
@@ -50,10 +53,11 @@ class _GameState extends State<Game> {
                     child: GestureDetector(
                       child: Container(color: Colors.red.withAlpha(130)),
                       onTap: () {
+                        audioPlayer
+                            .play(AssetSource("game/voice/rabbit.mp3"));
                         print("Rabit");
                         setState(() {
                           itemName.text = "Rabit";
-                          print(MediaQuery.of(context).size.width);
                         });
                       },
                     ),
