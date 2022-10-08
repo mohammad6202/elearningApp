@@ -89,7 +89,7 @@ class _QuestionState extends State<Question> {
                 }
               },
               child: Container(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.all(20),
                   decoration: MyColors.buttonBackground(btn_colors.blue),
                   alignment: Alignment.center,
                   height: 110,
@@ -119,7 +119,7 @@ class _QuestionState extends State<Question> {
                 }
               },
               child: Container(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.all(20),
                   decoration: MyColors.buttonBackground(btn_colors.red),
                   alignment: Alignment.center,
                   height: 110,
@@ -151,7 +151,7 @@ class _QuestionState extends State<Question> {
                 }
               },
               child: Container(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.all(20),
                   decoration: MyColors.buttonBackground(btn_colors.orange),
                   alignment: Alignment.center,
                   height: 110,
@@ -181,7 +181,7 @@ class _QuestionState extends State<Question> {
                 }
               },
               child: Container(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.all(20),
                   decoration: MyColors.buttonBackground(btn_colors.green),
                   alignment: Alignment.center,
                   height: 110,

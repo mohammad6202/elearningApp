@@ -94,9 +94,9 @@ class _QuizzState extends State<Quizz> {
                 question: "Have you enjoyed with us? :)",
                 rightanswer: "Of Course",
                 answer_1: "Of Course",
-                answer_2: "Of Course",
-                answer_3: "Of Course",
-                answer_4: "Of Course")
+                answer_2: "Noo!",
+                answer_3: "Not Sure",
+                answer_4: "Terrible")
           ]),
         ));
   }
