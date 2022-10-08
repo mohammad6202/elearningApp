@@ -38,6 +38,8 @@ dependencies:
   video_player: ^2.4.7 # by Ramzi
   syncfusion_flutter_pdfviewer: ^20.3.48 #AK
   audioplayers: ^1.1.0
+  introduction_screen: ^3.0.2
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:
