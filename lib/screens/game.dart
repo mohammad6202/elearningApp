@@ -9,79 +9,56 @@ class Game extends StatefulWidget {
   State<Game> createState() => _GameState();
 }
 
+var itemName = TextEditingController(text: "xx");
+
 class _GameState extends State<Game> {
   @override
   Widget build(BuildContext context) {
     double screenMaxWidth = 500;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text(
+          itemName.text,
+          style: TextStyle(color: Colors.black, fontSize: 30),
+        ),
+        centerTitle: true,
+      ),
       body: Center(
         child: SizedBox(
           width: screenMaxWidth,
-          child: Column(
+          child: ListView(
             children: [
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.amberAccent,
-                  child: Center(
-                      child: Text(
-                    "itemName",
-                    style: TextStyle(fontSize: 30),
-                  )),
-                ),
-              ),
-              _GameFrame(),
-              Expanded(
-                flex: 3,
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.pinkAccent,
-                  child: Text("item data here: bla bla bla..."),
-                ),
+              Stack(
+                children: [
+                  Image(
+                    fit: BoxFit.contain,
+                    image: NetworkImage(
+                        "http://www.clipartbest.com/cliparts/jTx/a7M/jTxa7MABc.jpg"),
+                  ),
+                  Positioned(
+                    top: 320,
+                    height: 160,
+                    left: 230,
+                    width: 80,
+                    child: GestureDetector(
+                      child: Container(color: Colors.red.withAlpha(130)),
+                      onTap: () {
+                        print("Rabit");
+                        setState(() {
+                          itemName.text = "Rabit";
+                        });
+                      },
+                    ),
+                  )
+                ],
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class _GameFrame extends StatefulWidget {
-  const _GameFrame({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<_GameFrame> createState() => _GameFrameState();
-}
-
-class _GameFrameState extends State<_GameFrame> {
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image(
-          fit: BoxFit.contain,
-          image: NetworkImage(
-              "http://www.clipartbest.com/cliparts/jTx/a7M/jTxa7MABc.jpg"),
-        ),
-        Positioned(
-          top: 330,
-          left: 240,
-          height: 140,
-          width: 70,
-          child: GestureDetector(
-            onTap: () {
-              print("Rabit");
-              setState(() {
-                // itemName += " R|";
-              });
-            },
-          ),
-        )
-      ],
     );
   }
 }
