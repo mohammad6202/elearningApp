@@ -22,43 +22,47 @@ class _GameState extends State<Game> {
         ? screenMaxWidth
         : MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        leading: Icon(
+          Icons.arrow_back_rounded,
+          size: 30,
+          color: Colors.red,
+        ),
+        backgroundColor: Colors.blueGrey,
         elevation: 0,
         title: Text(
           titleItemText.text,
-          style: TextStyle(color: Colors.black, fontSize: 30),
+          style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
       ),
-      body: Container(
-        color: Colors.white,
-        child: Center(
-          child: SizedBox(
-            width: screenMaxWidth,
-            child: ListView(
-              children: [
-                Stack(
-                  children: [
-                    Align(
-                      alignment: Alignment.topCenter,
-                      child: Image(
-                          fit: BoxFit.contain,
-                          image: AssetImage("assets/game/image/gameImage.jpg")),
-                    ),
-                    _rabit(),
-                    _ball(),
-                    _bear(),
-                    _bicycle(),
-                    _book(),
-                    _clink(),
-                    _cubes(),
-                    _hourse(),
-                    _puzzle(),
-                  ],
-                ),
-              ],
-            ),
+      body: Center(
+        child: SizedBox(
+          width: screenMaxWidth,
+          child: ListView(
+            children: [
+              Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Image(
+                        fit: BoxFit.contain,
+                        image: AssetImage("assets/game/image/gameImage.jpg")),
+                  ),
+                  _rabit(),
+                  _ball(),
+                  _bear(),
+                  _bicycle(),
+                  _book(),
+                  _clink(),
+                  _cubes(),
+                  _hourse(),
+                  _puzzle(),
+                  _train(),
+                ],
+              ),
+            ],
           ),
         ),
       ),
@@ -79,7 +83,6 @@ class _GameState extends State<Game> {
       left: screenMaxWidth / left,
       width: screenMaxWidth / width,
       child: GestureDetector(
-        child: Container(color: Colors.red.withAlpha(130)),
         onTap: () {
           audioPlayer.play(AssetSource(assetSource));
           setState(() {
@@ -225,6 +228,22 @@ class _GameState extends State<Game> {
     double width = 3.5;
     String assetSource = "game/voice/Puzzle.mp3";
     String itemName = "Puzzle";
+    return _item(
+        top: top,
+        height: height,
+        left: left,
+        width: width,
+        assetSource: assetSource,
+        itemName: itemName);
+  }
+
+  Positioned _train() {
+    double top = 3.5;
+    double height = 90;
+    double left = 1.4;
+    double width = 3.8;
+    String assetSource = "game/voice/train.mp3";
+    String itemName = "Train";
     return _item(
         top: top,
         height: height,
