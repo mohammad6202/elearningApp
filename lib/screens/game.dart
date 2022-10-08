@@ -46,14 +46,15 @@ class _GameState extends State<Game> {
                           fit: BoxFit.contain,
                           image: AssetImage("assets/game/image/gameImage.jpg")),
                     ),
-                    // _rabit(),
-                    // _ball(),
-                    // _bear(),
-                    // _bicycle(),
-                    // _book(),
-                    // _clink(),
-                    // _cubes(),
+                    _rabit(),
+                    _ball(),
+                    _bear(),
+                    _bicycle(),
+                    _book(),
+                    _clink(),
+                    _cubes(),
                     _hourse(),
+                    _puzzle(),
                   ],
                 ),
               ],
@@ -208,6 +209,22 @@ class _GameState extends State<Game> {
     double width = 3;
     String assetSource = "game/voice/hourse.mp3";
     String itemName = "Hourse";
+    return _item(
+        top: top,
+        height: height,
+        left: left,
+        width: width,
+        assetSource: assetSource,
+        itemName: itemName);
+  }
+
+  Positioned _puzzle() {
+    double top = 4.45;
+    double height = 70;
+    double left = 2.4;
+    double width = 3.5;
+    String assetSource = "game/voice/Puzzle.mp3";
+    String itemName = "Puzzle";
     return _item(
         top: top,
         height: height,
