@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:elearning/screens/game.dart';
 import 'package:elearning/screens/pdf.dart';
 import 'package:elearning/screens/quizz.dart';
 import 'package:elearning/screens/video.dart';
@@ -30,7 +31,6 @@ class _HomeState extends State<Home> {
       borderRadius: BorderRadius.circular(10),
     );
     return Scaffold(
-      appBar: AppBar(),
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             const SizedBox(
-              height: 20,
+              height: 60,
             ),
             const CircleAvatar(
               backgroundColor: Color.fromARGB(255, 251, 235, 235),
@@ -147,6 +147,23 @@ class _HomeState extends State<Home> {
                   ),
                 )
               ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const Game();
+                }));
+              },
+              child: Container(
+                alignment: Alignment.center,
+                height: 140,
+                width: 290,
+                decoration: buttonBoxDecoration,
+                child: const Text("Play a Game"),
+              ),
             )
           ],
         ),
