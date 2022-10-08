@@ -28,41 +28,55 @@ class Question extends StatefulWidget {
 }
 
 class _QuestionState extends State<Question> {
-  // Color correct = Colors.pink.shade200;
-  // Color wrong = Colors.pink.shade200;
+  Color contColor = Color.fromARGB(255, 245, 139, 74);
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              colors: [
+            Color.fromARGB(255, 14, 110, 255),
+            Color.fromARGB(255, 23, 29, 203),
+            Color.fromARGB(255, 5, 27, 124),
+          ])),
       child: ListView(
         children: [
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
-           Image(height: 150, image: widget.assetImage),
+          Image(height: 200, width: 150, image: widget.assetImage),
+          const SizedBox(
+            height: 10,
+          ),
           Text(
             "Queston No ${widget.quesNo.toString()}",
             textAlign: TextAlign.start,
+            style: const TextStyle(color: Colors.white),
           ),
           const Divider(
+            color: Colors.white,
             thickness: 4,
           ),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           Container(
+            padding: const EdgeInsets.only(left: 10),
             alignment: Alignment.center,
-            height: 70,
+            height: 100,
             width: 250,
             decoration: BoxDecoration(
-                color: Colors.pink[200],
-                borderRadius: BorderRadius.circular(50)),
+                color: contColor, borderRadius: BorderRadius.circular(20)),
             child: Text(
               widget.question.toString(),
-              style: const TextStyle(fontSize: 22),
+              style: const TextStyle(fontSize: 25, color: Colors.white),
             ),
           ),
           const SizedBox(
-            height: 60,
+            height: 30,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             GestureDetector(
@@ -82,18 +96,20 @@ class _QuestionState extends State<Question> {
                 }
               },
               child: Container(
+                  padding: const EdgeInsets.only(left: 20),
                   decoration: BoxDecoration(
-                      color: Colors.pink[200], shape: BoxShape.circle),
+                      color: contColor,
+                      borderRadius: BorderRadius.circular(30)),
                   alignment: Alignment.center,
-                  height: 100,
-                  width: 100,
+                  height: 110,
+                  width: 110,
                   child: Text(
-                    widget.answer_1.toString(),
-                    style: const TextStyle(fontSize: 18),
+                    "A. ${widget.answer_1.toString()}",
+                    style: const TextStyle(fontSize: 18, color: Colors.white),
                   )),
             ),
             const SizedBox(
-              width: 40,
+              width: 30,
             ),
             GestureDetector(
               onTap: () {
@@ -112,19 +128,21 @@ class _QuestionState extends State<Question> {
                 }
               },
               child: Container(
+                  padding: const EdgeInsets.only(left: 20),
                   decoration: BoxDecoration(
-                      color: Colors.pink[200], shape: BoxShape.circle),
+                      color: contColor,
+                      borderRadius: BorderRadius.circular(30)),
                   alignment: Alignment.center,
-                  height: 100,
-                  width: 100,
+                  height: 110,
+                  width: 110,
                   child: Text(
-                    widget.answer_2.toString(),
-                    style: const TextStyle(fontSize: 18),
+                    "B. ${widget.answer_2.toString()}",
+                    style: const TextStyle(fontSize: 18, color: Colors.white),
                   )),
             ),
           ]),
           const SizedBox(
-            height: 40,
+            height: 30,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             GestureDetector(
@@ -144,18 +162,28 @@ class _QuestionState extends State<Question> {
                 }
               },
               child: Container(
-                  height: 100,
-                  width: 100,
-                  alignment: Alignment.center,
+                  padding: const EdgeInsets.only(left: 20),
                   decoration: BoxDecoration(
-                      color: Colors.pink[200], shape: BoxShape.circle),
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Color.fromARGB(255, 135, 171, 255),
+                            Color.fromARGB(255, 63, 77, 151),
+                            Color.fromARGB(255, 95, 149, 255)
+                          ]),
+                      // color: contColor,
+                      borderRadius: BorderRadius.circular(30)),
+                  alignment: Alignment.center,
+                  height: 110,
+                  width: 110,
                   child: Text(
-                    widget.answer_3.toString(),
-                    style: const TextStyle(fontSize: 18),
+                    "C. ${widget.answer_3.toString()}",
+                    style: const TextStyle(fontSize: 18, color: Colors.white),
                   )),
             ),
             const SizedBox(
-              width: 40,
+              width: 30,
             ),
             GestureDetector(
               onTap: () {
@@ -174,14 +202,16 @@ class _QuestionState extends State<Question> {
                 }
               },
               child: Container(
-                  height: 100,
-                  width: 100,
-                  alignment: Alignment.center,
+                  padding: const EdgeInsets.only(left: 20),
                   decoration: BoxDecoration(
-                      color: Colors.pink[200], shape: BoxShape.circle),
+                      color: contColor,
+                      borderRadius: BorderRadius.circular(30)),
+                  alignment: Alignment.center,
+                  height: 110,
+                  width: 110,
                   child: Text(
-                    widget.answer_4.toString(),
-                    style: const TextStyle(fontSize: 18),
+                    "D. ${widget.answer_4.toString()}",
+                    style: const TextStyle(fontSize: 18, color: Colors.white),
                   )),
             ),
           ])
