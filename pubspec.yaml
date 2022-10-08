@@ -66,6 +66,7 @@ flutter:
   assets:
     - images/
     - assets/game/voice/
+    - assets/game/image/
     - assets/book/learn.pdf
     - assets/voice/test.mp3
     - assets/voice/1.mp3
