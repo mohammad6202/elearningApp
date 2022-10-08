@@ -50,7 +50,8 @@ class _GameState extends State<Game> {
                     // _ball(),
                     // _bear(),
                     // _bicycle(),
-                    _book(),
+                    // _book(),
+                    _clink(),
                   ],
                 ),
               ],
@@ -157,6 +158,22 @@ class _GameState extends State<Game> {
     double width = 3.5;
     String assetSource = "game/voice/Book.mp3";
     String itemName = "Book";
+    return _item(
+        top: top,
+        height: height,
+        left: left,
+        width: width,
+        assetSource: assetSource,
+        itemName: itemName);
+  }
+
+  Positioned _clink() {
+    double top = 33;
+    double height = 80;
+    double left = 1.55;
+    double width = 3;
+    String assetSource = "game/voice/Clink.mp3";
+    String itemName = "Clink";
     return _item(
         top: top,
         height: height,
