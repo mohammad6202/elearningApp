@@ -48,7 +48,8 @@ class _GameState extends State<Game> {
                     ),
                     // _rabit(),
                     // _ball(),
-                    _bear(),
+                    // _bear(),
+                    _bicycle(),
                   ],
                 ),
               ],
@@ -123,6 +124,22 @@ class _GameState extends State<Game> {
     double width = 3;
     String assetSource = "game/voice/bear.mp3";
     String itemName = "Bear";
+    return _item(
+        top: top,
+        height: height,
+        left: left,
+        width: width,
+        assetSource: assetSource,
+        itemName: itemName);
+  }
+
+  Positioned _bicycle() {
+    double top = 4;
+    double height = 130;
+    double left = 16;
+    double width = 3;
+    String assetSource = "game/voice/Bicycle.mp3";
+    String itemName = "Bicycle";
     return _item(
         top: top,
         height: height,
