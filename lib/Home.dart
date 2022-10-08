@@ -5,6 +5,7 @@ import 'package:elearning/screens/pdf.dart';
 import 'package:elearning/screens/quizz.dart';
 import 'package:elearning/screens/video.dart';
 import 'package:elearning/screens/voice.dart';
+import 'package:elearning/shared/images.dart';
 import 'package:flutter/material.dart';
 import 'package:elearning/shared/colors.dart';
 
@@ -19,43 +20,17 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     var buttonBoxDecoration = BoxDecoration(
-      //
       color: Colors.cyan.shade400,
       borderRadius: BorderRadius.circular(10),
     );
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-            //color: const Color.fromARGB(255, 56, 54, 54)
-            gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-              Color.fromARGB(255, 56, 54, 54),
-              Color.fromARGB(255, 223, 220, 220),
-            ])),
-        alignment: Alignment.topCenter,
-        child: Column(
+        decoration: MyColors.background_BoxDecoration(),
+        child: ListView(
+          padding: EdgeInsets.only(top: 30),
           children: [
-            const SizedBox(
-              height: 60,
-            ),
-            SizedBox(
-                height: 150,
-                width: 150,
-                child: Image(image: AssetImage("images/ee.png"))),
-            const SizedBox(
-              height: 30,
-            ),
-            const Text("Choose the Way of learning",
-                style: TextStyle(
-                  fontSize: 28,
-                  color: Colors.white,
-                  fontFamily: 'Cinzel',
-                )),
-            const SizedBox(
-              height: 20,
-            ),
+            MyImages.getHomeLogoImg(),
+            _homeText,
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -207,4 +182,17 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+
+  final _homeText = Padding(
+    padding: const EdgeInsets.only(top: 8, bottom: 8),
+    child: const Text(
+      "Learn how you want to learn",
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontSize: 24,
+        color: Colors.white,
+        fontFamily: 'Cinzel',
+      ),
+    ),
+  );
 }
