@@ -1,4 +1,5 @@
 import 'package:elearning/components/alerts.dart';
+import 'package:elearning/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class Question extends StatefulWidget {
@@ -28,8 +29,6 @@ class Question extends StatefulWidget {
 }
 
 class _QuestionState extends State<Question> {
-  Color contColor = Color.fromARGB(255, 245, 139, 74);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -91,17 +90,7 @@ class _QuestionState extends State<Question> {
               },
               child: Container(
                   padding: const EdgeInsets.only(left: 20),
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromARGB(255, 135, 171, 255),
-                            Color.fromARGB(255, 63, 77, 151),
-                            Color.fromARGB(255, 95, 149, 255)
-                          ]),
-                      // color: contColor,
-                      borderRadius: BorderRadius.circular(30)),
+                  decoration: MyColors.buttonBackground(btn_colors.blue),
                   alignment: Alignment.center,
                   height: 110,
                   width: 110,
@@ -131,17 +120,7 @@ class _QuestionState extends State<Question> {
               },
               child: Container(
                   padding: const EdgeInsets.only(left: 20),
-                  decoration: BoxDecoration(
-                      // color: contColor,
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromARGB(255, 135, 171, 255),
-                            Color.fromARGB(255, 63, 77, 151),
-                            Color.fromARGB(255, 95, 149, 255)
-                          ]),
-                      borderRadius: BorderRadius.circular(30)),
+                  decoration: MyColors.buttonBackground(btn_colors.red),
                   alignment: Alignment.center,
                   height: 110,
                   width: 110,
@@ -173,17 +152,7 @@ class _QuestionState extends State<Question> {
               },
               child: Container(
                   padding: const EdgeInsets.only(left: 20),
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromARGB(255, 135, 171, 255),
-                            Color.fromARGB(255, 63, 77, 151),
-                            Color.fromARGB(255, 95, 149, 255)
-                          ]),
-                      // color: contColor,
-                      borderRadius: BorderRadius.circular(30)),
+                  decoration: MyColors.buttonBackground(btn_colors.orange),
                   alignment: Alignment.center,
                   height: 110,
                   width: 110,
@@ -213,17 +182,7 @@ class _QuestionState extends State<Question> {
               },
               child: Container(
                   padding: const EdgeInsets.only(left: 20),
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Color.fromARGB(255, 135, 171, 255),
-                            Color.fromARGB(255, 63, 77, 151),
-                            Color.fromARGB(255, 95, 149, 255)
-                          ]),
-                      // color: contColor,
-                      borderRadius: BorderRadius.circular(30)),
+                  decoration: MyColors.buttonBackground(btn_colors.green),
                   alignment: Alignment.center,
                   height: 110,
                   width: 110,
