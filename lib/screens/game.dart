@@ -47,7 +47,8 @@ class _GameState extends State<Game> {
                           image: AssetImage("assets/game/image/gameImage.jpg")),
                     ),
                     // _rabit(),
-                    _ball(),
+                    // _ball(),
+                    _bear(),
                   ],
                 ),
               ],
@@ -106,6 +107,22 @@ class _GameState extends State<Game> {
     double width = 5;
     String assetSource = "game/voice/Ball.mp3";
     String itemName = "Ball";
+    return _item(
+        top: top,
+        height: height,
+        left: left,
+        width: width,
+        assetSource: assetSource,
+        itemName: itemName);
+  }
+
+  Positioned _bear() {
+    double top = 1.7;
+    double height = 160;
+    double left = 16;
+    double width = 3;
+    String assetSource = "game/voice/bear.mp3";
+    String itemName = "Bear";
     return _item(
         top: top,
         height: height,
