@@ -28,10 +28,35 @@ class _HomeState extends State<Home> {
               spacing: 14,
               runSpacing: 20,
               children: [
-                _elevatedButton(Screens.video, context),
-                _elevatedButton(Screens.voice, context),
-                _elevatedButton(Screens.book, context),
-                _elevatedButton(Screens.quiz, context),
+                ElevatedButton(
+                  onPressed: () => goTo(Screens.video, context),
+                  child: _BtnContent(
+                    screenName: Screens.video,
+                    imageType: "gif",
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () => goTo(Screens.voice, context),
+                  child: _BtnContent(
+                    screenName: Screens.voice,
+                    imageType: "gif",
+                  ),
+                ),
+
+                ElevatedButton(
+                  onPressed: () => goTo(Screens.book, context),
+                  child: _BtnContent(
+                    screenName: Screens.book,
+                    imageType: "gif",
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () => goTo(Screens.quiz, context),
+                  child: _BtnContent(
+                    screenName: Screens.quiz,
+                    imageType: "gif",
+                  ),
+                ),
                 // Game ElevatedButton
                 ElevatedButton(
                   onPressed: () => goTo(Screens.game, context),

@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Home();
+    return Home();
   }
 }
 
@@ -49,6 +49,7 @@ enum Screens {
 }
 
 ButtonStyle _buttonStyle = ElevatedButton.styleFrom(
+  backgroundColor: Colors.blue.shade800,
   shadowColor: Colors.blue,
   elevation: 10,
   side: const BorderSide(color: Colors.white, width: 1.4),
