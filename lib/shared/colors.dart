@@ -13,6 +13,7 @@ class MyColors {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
+            //old colors
             // Color.fromARGB(255, 56, 54, 54),
             // Color.fromARGB(255, 223, 220, 220),
 
@@ -48,4 +49,6 @@ class MyColors {
       borderRadius: BorderRadius.circular(30),
     );
   }
+
+  static Color appBarColor = const Color.fromARGB(255, 27, 27, 28);
 }
