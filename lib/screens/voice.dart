@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:elearning/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 import 'dart:async';
 
 import '../Home.dart';
+import '../shared/widgets.dart';
 
 const double _ICON_SIZE = 30;
 final player = AudioPlayer();
@@ -17,75 +19,71 @@ class Voice extends StatelessWidget {
   Widget build(BuildContext context) {
     _initializeLocalConvos();
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 56, 54, 54),
       appBar: AppBar(
         centerTitle: true,
         automaticallyImplyLeading: false,
-        leading: IconButton(
-            onPressed: (() {
-              Navigator.pop(context, MaterialPageRoute(builder: (context) {
-                return Home();
-              }));
-            }),
-            icon: Icon(Icons.home_filled)),
-        backgroundColor: Color.fromARGB(255, 27, 27, 28),
+        leading: MyWidgets.BtnToGo_Home(context),
+        backgroundColor: MyColors.appBarColor,
         title: Text("Voice Zone"),
       ),
-      body: ListView.builder(
-        itemCount: _Conversation.conversations.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(2.0),
-            child: Card(
-              child: Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(4),
-                    width: double.infinity,
-                    color: Colors.blue[200],
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 4),
-                      child: Text(
-                        _Conversation.conversations[index]._conversationTitle,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
+      body: Container(
+        decoration: MyColors.background_BoxDecoration(),
+        child: ListView.builder(
+          itemCount: _Conversation.conversations.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Card(
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(4),
+                      width: double.infinity,
+                      color: Colors.blue[200],
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 4),
+                        child: Text(
+                          _Conversation.conversations[index]._conversationTitle,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  ButtonBar(
-                    alignment: MainAxisAlignment.center,
-                    children: [
-                      IconButton(
-                        iconSize: _ICON_SIZE,
-                        icon: Icon(Icons.play_arrow),
-                        onPressed: () {
-                          player.play(AssetSource(_Conversation
-                              .conversations[index]._assertSource));
-                        },
-                      ),
-                      IconButton(
-                        iconSize: _ICON_SIZE,
-                        icon: Icon(Icons.stop),
-                        onPressed: () {
-                          player.stop();
-                        },
-                      ),
-                      IconButton(
-                        iconSize: _ICON_SIZE,
-                        icon: Icon(Icons.pause),
-                        onPressed: () {
-                          player.pause();
-                        },
-                      )
-                    ],
-                  ),
-                ],
+                    ButtonBar(
+                      alignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                          iconSize: _ICON_SIZE,
+                          icon: Icon(Icons.play_arrow),
+                          onPressed: () {
+                            player.play(AssetSource(_Conversation
+                                .conversations[index]._assertSource));
+                          },
+                        ),
+                        IconButton(
+                          iconSize: _ICON_SIZE,
+                          icon: Icon(Icons.stop),
+                          onPressed: () {
+                            player.stop();
+                          },
+                        ),
+                        IconButton(
+                          iconSize: _ICON_SIZE,
+                          icon: Icon(Icons.pause),
+                          onPressed: () {
+                            player.pause();
+                          },
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
