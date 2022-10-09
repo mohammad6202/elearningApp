@@ -6,6 +6,8 @@
 /// https://blog.logrocket.com/flutter-video-player/
 
 import 'package:elearning/Home.dart';
+import 'package:elearning/shared/colors.dart';
+import 'package:elearning/shared/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
@@ -18,47 +20,18 @@ class Video extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    // TabController _tabController = TabController(length: 2, vsync: this);
     return DefaultTabController(
       length: 2,
       child: Builder(builder: (BuildContext context) {
-        final TabController tabController = DefaultTabController.of(context)!;
-        tabController.addListener(() {
-          if (!tabController.indexIsChanging) {
-            // Your code goes here.
-            // To get index of current tab use tabController.index
-            debugPrint("TabIndex is: ${tabController.index} Now.");
-          }
-        });
         return Scaffold(
           key: const ValueKey<String>('home_page'),
           appBar: AppBar(
             centerTitle: true,
             automaticallyImplyLeading: false,
-            leading: IconButton(
-                onPressed: (() {
-                  Navigator.pop(context, MaterialPageRoute(builder: (context) {
-                    return Home();
-                  }));
-                }),
-                icon: Icon(Icons.home_filled)),
-            backgroundColor: Color.fromARGB(255, 27, 27, 28),
+            leading: MyWidgets.BtnToGo_Home(context),
+            backgroundColor: MyColors.appBarColor,
             title: const Text('Videos Zone'),
-            actions: <Widget>[
-              IconButton(
-                key: const ValueKey<String>('push_tab'),
-                icon: const Icon(Icons.fullscreen),
-                onPressed: () {
-                  Navigator.push<_PlayerVideoAndPopPage>(
-                    context,
-                    MaterialPageRoute<_PlayerVideoAndPopPage>(
-                      builder: (BuildContext context) =>
-                          _PlayerVideoAndPopPage(),
-                    ),
-                  );
-                },
-              )
-            ],
+            actions: <Widget>[_fullScreenMode(context)],
             bottom: const TabBar(
               isScrollable: true,
               tabs: <Widget>[
@@ -73,11 +46,14 @@ class Video extends StatelessWidget {
               ],
             ),
           ),
-          body: TabBarView(
-            children: <Widget>[
-              _VideoPlayer(),
-              _VideosList(),
-            ],
+          body: Container(
+            decoration: MyColors.background_BoxDecoration(),
+            child: TabBarView(
+              children: <Widget>[
+                _VideoPlayer(),
+                _VideosList(),
+              ],
+            ),
           ),
         );
       }),
@@ -85,42 +61,47 @@ class Video extends StatelessWidget {
   }
 }
 
+IconButton _fullScreenMode(BuildContext context) {
+  return IconButton(
+    key: const ValueKey<String>('push_tab'),
+    icon: const Icon(Icons.fullscreen),
+    onPressed: () {
+      Navigator.push<_PlayerVideoAndPopPage>(
+        context,
+        MaterialPageRoute<_PlayerVideoAndPopPage>(
+          builder: (BuildContext context) => _PlayerVideoAndPopPage(),
+        ),
+      );
+    },
+  );
+}
+
 class _VideosList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-            Color.fromARGB(255, 56, 54, 54),
-            Color.fromARGB(255, 223, 220, 220),
-          ])),
-      child: ListView(
-        children: [
-          _VideoListCard(
-            context: context,
-            title: "Forget to do vs forget doing",
-            videoPath: "assets/video/Forget-to-do-vs-forget-doing.mp4",
-          ),
-          _VideoListCard(
-            context: context,
-            title: "Make & Do",
-            videoPath: "assets/video/Make-do.mp4",
-          ),
-          _VideoListCard(
-            context: context,
-            title: "Ways to say 'sorry' Part 1",
-            videoPath: "assets/video/Ways-to-say-sorry-Part-1.mp4",
-          ),
-          _VideoListCard(
-            context: context,
-            title: "Ways to say 'sorry' Part 2",
-            videoPath: "assets/video/Ways-to-say-sorry-Part-2.mp4",
-          ),
-        ],
-      ),
+    return ListView(
+      children: [
+        _VideoListCard(
+          context: context,
+          title: "Forget to do vs forget doing",
+          videoPath: "assets/video/Forget-to-do-vs-forget-doing.mp4",
+        ),
+        _VideoListCard(
+          context: context,
+          title: "Make & Do",
+          videoPath: "assets/video/Make-do.mp4",
+        ),
+        _VideoListCard(
+          context: context,
+          title: "Ways to say 'sorry' Part 1",
+          videoPath: "assets/video/Ways-to-say-sorry-Part-1.mp4",
+        ),
+        _VideoListCard(
+          context: context,
+          title: "Ways to say 'sorry' Part 2",
+          videoPath: "assets/video/Ways-to-say-sorry-Part-2.mp4",
+        ),
+      ],
     );
   }
 }
@@ -164,9 +145,6 @@ class _VideoPlayerState extends State<_VideoPlayer> {
     super.initState();
     _controller = VideoPlayerController.asset(videoAssertPath);
 
-    _controller.addListener(() {
-      setState(() {});
-    });
     _controller.setLooping(true);
     _controller.initialize().then((_) => setState(() {}));
     _controller.play();
@@ -180,17 +158,11 @@ class _VideoPlayerState extends State<_VideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
+    double padBottom = MediaQuery.of(context).size.height;
+    print(padBottom);
+    padBottom = MediaQuery.of(context).size.height * 0.4;
+    print(padBottom);
     return Container(
-      height: double.infinity,
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-            Color.fromARGB(255, 56, 54, 54),
-            Color.fromARGB(255, 223, 220, 220),
-          ])),
-      padding: const EdgeInsets.all(20),
       child: AspectRatio(
         aspectRatio: _controller.value.aspectRatio,
         child: Stack(
