@@ -25,16 +25,36 @@ class MyColors {
 
   static List<Color> getMaterialColor_BasedOnENum(btn_colors colorname) {
     if (colorname == btn_colors.blue) {
-      return [Colors.blue.shade200, Colors.blue, Colors.blue.shade400];
+      return [
+        Colors.blue.shade400,
+        Colors.blue,
+        Colors.blue.shade600,
+        Colors.blue.shade900,
+      ];
     }
     if (colorname == btn_colors.red) {
-      return [Colors.red.shade200, Colors.red, Colors.red.shade400];
+      return [
+        Colors.red.shade400,
+        Colors.red,
+        Colors.red.shade600,
+        Colors.red.shade900,
+      ];
     }
     if (colorname == btn_colors.green) {
-      return [Colors.green.shade200, Colors.green, Colors.green.shade400];
+      return [
+        Colors.green.shade400,
+        Colors.green,
+        Colors.green.shade600,
+        Colors.green.shade900,
+      ];
     }
     if (colorname == btn_colors.orange) {
-      return [Colors.orange.shade200, Colors.orange, Colors.orange.shade400];
+      return [
+        Colors.orange.shade400,
+        Colors.orange,
+        Colors.orange.shade600,
+        Colors.orange.shade900,
+      ];
     }
     return [];
   }
