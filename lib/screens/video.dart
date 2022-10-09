@@ -107,27 +107,41 @@ class _VideosList extends StatelessWidget {
 }
 
 /// A filler card to show the video in a list of scrolling contents.
-Card _VideoListCard({
+Padding _VideoListCard({
   required BuildContext context,
   required String title,
   required String videoPath,
 }) {
-  return Card(
-    child: ListTile(
-      title: Text(title),
-      trailing: TextButton(
-        child: const Text('Watch Video'),
-        onPressed: () {
-          // should change to 'Video Player' Tab.
-          // However, I did not knew how. so I used pushReplacement
+  return Padding(
+    padding: const EdgeInsets.all(10),
+    child: Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+      ),
+      color: Color.fromARGB(236, 255, 255, 255),
+      shadowColor: Colors.black,
+      elevation: 22,
+      child: ListTile(
+        title: Text(
+          title,
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        trailing: TextButton(
+          child: const Text('Watch Video'),
+          onPressed: () {
+            // should change to 'Video Player' Tab.
+            // However, I did not knew how. so I used pushReplacement
 
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) {
-            return Video(
-              videoPath: videoPath,
-            );
-          }));
-        },
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) {
+              return Video(
+                videoPath: videoPath,
+              );
+            }));
+          },
+        ),
       ),
     ),
   );
