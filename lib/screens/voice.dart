@@ -32,14 +32,22 @@ class Voice extends StatelessWidget {
           itemCount: _Conversation.conversations.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.all(2.0),
+              padding: const EdgeInsets.fromLTRB(10, 8, 10, 6),
               child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(40),
+                ),
                 child: Column(
                   children: [
                     Container(
                       padding: EdgeInsets.all(4),
                       width: double.infinity,
-                      color: Colors.blue[200],
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: const [
+                          Color.fromARGB(255, 13, 82, 139),
+                          Color.fromARGB(255, 20, 117, 197),
+                        ]),
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.only(left: 4),
                         child: Text(
@@ -47,6 +55,7 @@ class Voice extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
                         ),
                       ),
