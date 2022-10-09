@@ -28,7 +28,7 @@ class Question extends StatefulWidget {
   State<Question> createState() => _QuestionState();
 }
 
-double btnHeight = 100;
+double btnHeight = 120;
 double btnWidth = 140;
 const sizedBox = SizedBox(
   width: 20,
@@ -88,9 +88,9 @@ class _QuestionState extends State<Question> {
               }
             },
             child: Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(10),
                 decoration: MyColors.buttonBackground(btn_colors.blue),
-                alignment: Alignment.center,
+                alignment: Alignment.centerLeft,
                 height: btnHeight,
                 width: btnWidth,
                 child: Text(
@@ -116,9 +116,9 @@ class _QuestionState extends State<Question> {
               }
             },
             child: Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(10),
                 decoration: MyColors.buttonBackground(btn_colors.red),
-                alignment: Alignment.center,
+                alignment: Alignment.centerLeft,
                 height: btnHeight,
                 width: btnWidth,
                 child: Text(
@@ -146,9 +146,9 @@ class _QuestionState extends State<Question> {
               }
             },
             child: Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(10),
                 decoration: MyColors.buttonBackground(btn_colors.orange),
-                alignment: Alignment.center,
+                alignment: Alignment.centerLeft,
                 height: btnHeight,
                 width: btnWidth,
                 child: Text(
@@ -174,9 +174,9 @@ class _QuestionState extends State<Question> {
               }
             },
             child: Container(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(10),
                 decoration: MyColors.buttonBackground(btn_colors.green),
-                alignment: Alignment.center,
+                alignment: Alignment.centerLeft,
                 height: btnHeight,
                 width: btnWidth,
                 child: Text(
