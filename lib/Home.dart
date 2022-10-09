@@ -19,8 +19,8 @@ class _HomeState extends State<Home> {
       body: Container(
         decoration: MyColors.background_BoxDecoration(),
         child: ListView(
-          padding: EdgeInsets.only(top: 30),
           children: [
+            _defPadding,
             MyImages.getHomeLogoImg(),
             _homeText,
             Wrap(
@@ -35,6 +35,7 @@ class _HomeState extends State<Home> {
                 _elevatedButton(Screens.game, context),
               ],
             ),
+            _defPadding,
           ],
         ),
       ),
@@ -42,10 +43,12 @@ class _HomeState extends State<Home> {
   }
 }
 
+var _defPadding = Padding(padding: EdgeInsets.only(top: 30));
+
 final _homeText = Padding(
-  padding: const EdgeInsets.only(top: 8, bottom: 8),
+  padding: const EdgeInsets.only(top: 0, bottom: 8),
   child: const Text(
-    "Learn the way you want to learn britain english",
+    "Learn British English the way you want to",
     textAlign: TextAlign.center,
     style: TextStyle(
       fontSize: 24,
@@ -69,8 +72,8 @@ void goTo(Screens screenName, BuildContext context) {
 SizedBox _BtnContent({
   required Screens screenName,
   String imageType = "gif",
-  double btnWidth = 140,
-  double btnHeight = 140,
+  double btnWidth = 130,
+  double btnHeight = 110,
 }) {
   String _screenName = screenName.name;
   return SizedBox(
