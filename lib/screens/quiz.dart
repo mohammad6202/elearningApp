@@ -1,5 +1,7 @@
 import 'package:elearning/Home.dart';
 import 'package:elearning/components/quistion.dart';
+import 'package:elearning/shared/colors.dart';
+import 'package:elearning/shared/widgets.dart';
 import 'package:flutter/material.dart';
 
 //Mohammad Ibrahim Almseidin
@@ -19,14 +21,8 @@ class _QuizzState extends State<Quizz> {
         child: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            leading: IconButton(
-                onPressed: () {
-                  Navigator.pop(context, MaterialPageRoute(builder: ((context) {
-                    return const Home();
-                  })));
-                },
-                icon: const Icon(Icons.home_filled)),
-            backgroundColor: Color.fromARGB(255, 27, 27, 28),
+            leading: MyWidgets.BtnToGo_Home(context),
+            backgroundColor: MyColors.appBarColor,
             centerTitle: true,
             title: const Text("Fun Quizz"),
             bottom: const TabBar(tabs: [
