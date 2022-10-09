@@ -1,3 +1,5 @@
+import 'package:elearning/shared/colors.dart';
+import 'package:elearning/shared/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
@@ -22,14 +24,8 @@ class _PdfBook extends State<PdfBook> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        leading: IconButton(
-            onPressed: (() {
-              Navigator.pop(context, MaterialPageRoute(builder: (context) {
-                return Home();
-              }));
-            }),
-            icon: Icon(Icons.home_filled)),
-        backgroundColor: Colors.black87,
+        leading: MyWidgets.BtnToGo_Home(context),
+        backgroundColor: MyColors.appBarColor,
         centerTitle: true,
         title: const Text('English e-Book'),
         actions: <Widget>[
