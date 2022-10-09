@@ -31,175 +31,165 @@ class Question extends StatefulWidget {
 class _QuestionState extends State<Question> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-            Color.fromARGB(255, 56, 54, 54),
-            Color.fromARGB(255, 223, 220, 220),
-          ])),
-      child: ListView(
-        children: [
+    return ListView(
+      children: [
+        const SizedBox(
+          height: 10,
+        ),
+        Image(height: 200, width: 150, image: widget.assetImage),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          "Queston No ${widget.quesNo.toString()}",
+          textAlign: TextAlign.start,
+          style: const TextStyle(color: Colors.white),
+        ),
+        const Divider(
+          color: Colors.white,
+          thickness: 4,
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Container(
+          padding: const EdgeInsets.only(left: 10),
+          alignment: Alignment.center,
+          height: 100,
+          width: 250,
+          decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 84, 83, 83),
+              borderRadius: BorderRadius.circular(20)),
+          child: Text(
+            widget.question.toString(),
+            style: const TextStyle(fontSize: 25, color: Colors.white),
+          ),
+        ),
+        const SizedBox(
+          height: 25,
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          GestureDetector(
+            onTap: () {
+              if (widget.answer_1 == widget.rightanswer) {
+                showDialog(
+                    context: context,
+                    builder: ((context) {
+                      return const Correct();
+                    }));
+              } else {
+                showDialog(
+                    context: context,
+                    builder: ((context) {
+                      return const Wrong();
+                    }));
+              }
+            },
+            child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: MyColors.buttonBackground(btn_colors.blue),
+                alignment: Alignment.center,
+                height: 110,
+                width: 110,
+                child: Text(
+                  "A. ${widget.answer_1.toString()}",
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                )),
+          ),
           const SizedBox(
-            height: 10,
+            width: 30,
           ),
-          Image(height: 200, width: 150, image: widget.assetImage),
+          GestureDetector(
+            onTap: () {
+              if (widget.answer_2 == widget.rightanswer) {
+                showDialog(
+                    context: context,
+                    builder: ((context) {
+                      return const Correct();
+                    }));
+              } else {
+                showDialog(
+                    context: context,
+                    builder: ((context) {
+                      return const Wrong();
+                    }));
+              }
+            },
+            child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: MyColors.buttonBackground(btn_colors.red),
+                alignment: Alignment.center,
+                height: 110,
+                width: 110,
+                child: Text(
+                  "B. ${widget.answer_2.toString()}",
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                )),
+          ),
+        ]),
+        const SizedBox(
+          height: 30,
+        ),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          GestureDetector(
+            onTap: () {
+              if (widget.answer_3 == widget.rightanswer) {
+                showDialog(
+                    context: context,
+                    builder: ((context) {
+                      return const Correct();
+                    }));
+              } else {
+                showDialog(
+                    context: context,
+                    builder: ((context) {
+                      return const Wrong();
+                    }));
+              }
+            },
+            child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: MyColors.buttonBackground(btn_colors.orange),
+                alignment: Alignment.center,
+                height: 110,
+                width: 110,
+                child: Text(
+                  "C. ${widget.answer_3.toString()}",
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                )),
+          ),
           const SizedBox(
-            height: 10,
+            width: 30,
           ),
-          Text(
-            "Queston No ${widget.quesNo.toString()}",
-            textAlign: TextAlign.start,
-            style: const TextStyle(color: Colors.white),
+          GestureDetector(
+            onTap: () {
+              if (widget.answer_4 == widget.rightanswer) {
+                showDialog(
+                    context: context,
+                    builder: ((context) {
+                      return const Correct();
+                    }));
+              } else {
+                showDialog(
+                    context: context,
+                    builder: ((context) {
+                      return const Wrong();
+                    }));
+              }
+            },
+            child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: MyColors.buttonBackground(btn_colors.green),
+                alignment: Alignment.center,
+                height: 110,
+                width: 110,
+                child: Text(
+                  "D. ${widget.answer_4.toString()}",
+                  style: const TextStyle(fontSize: 18, color: Colors.white),
+                )),
           ),
-          const Divider(
-            color: Colors.white,
-            thickness: 4,
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Container(
-            padding: const EdgeInsets.only(left: 10),
-            alignment: Alignment.center,
-            height: 100,
-            width: 250,
-            decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 84, 83, 83),
-                borderRadius: BorderRadius.circular(20)),
-            child: Text(
-              widget.question.toString(),
-              style: const TextStyle(fontSize: 25, color: Colors.white),
-            ),
-          ),
-          const SizedBox(
-            height: 25,
-          ),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            GestureDetector(
-              onTap: () {
-                if (widget.answer_1 == widget.rightanswer) {
-                  showDialog(
-                      context: context,
-                      builder: ((context) {
-                        return const Correct();
-                      }));
-                } else {
-                  showDialog(
-                      context: context,
-                      builder: ((context) {
-                        return const Wrong();
-                      }));
-                }
-              },
-              child: Container(
-                  padding: const EdgeInsets.all(20),
-                  decoration: MyColors.buttonBackground(btn_colors.blue),
-                  alignment: Alignment.center,
-                  height: 110,
-                  width: 110,
-                  child: Text(
-                    "A. ${widget.answer_1.toString()}",
-                    style: const TextStyle(fontSize: 18, color: Colors.white),
-                  )),
-            ),
-            const SizedBox(
-              width: 30,
-            ),
-            GestureDetector(
-              onTap: () {
-                if (widget.answer_2 == widget.rightanswer) {
-                  showDialog(
-                      context: context,
-                      builder: ((context) {
-                        return const Correct();
-                      }));
-                } else {
-                  showDialog(
-                      context: context,
-                      builder: ((context) {
-                        return const Wrong();
-                      }));
-                }
-              },
-              child: Container(
-                  padding: const EdgeInsets.all(20),
-                  decoration: MyColors.buttonBackground(btn_colors.red),
-                  alignment: Alignment.center,
-                  height: 110,
-                  width: 110,
-                  child: Text(
-                    "B. ${widget.answer_2.toString()}",
-                    style: const TextStyle(fontSize: 18, color: Colors.white),
-                  )),
-            ),
-          ]),
-          const SizedBox(
-            height: 30,
-          ),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            GestureDetector(
-              onTap: () {
-                if (widget.answer_3 == widget.rightanswer) {
-                  showDialog(
-                      context: context,
-                      builder: ((context) {
-                        return const Correct();
-                      }));
-                } else {
-                  showDialog(
-                      context: context,
-                      builder: ((context) {
-                        return const Wrong();
-                      }));
-                }
-              },
-              child: Container(
-                  padding: const EdgeInsets.all(20),
-                  decoration: MyColors.buttonBackground(btn_colors.orange),
-                  alignment: Alignment.center,
-                  height: 110,
-                  width: 110,
-                  child: Text(
-                    "C. ${widget.answer_3.toString()}",
-                    style: const TextStyle(fontSize: 18, color: Colors.white),
-                  )),
-            ),
-            const SizedBox(
-              width: 30,
-            ),
-            GestureDetector(
-              onTap: () {
-                if (widget.answer_4 == widget.rightanswer) {
-                  showDialog(
-                      context: context,
-                      builder: ((context) {
-                        return const Correct();
-                      }));
-                } else {
-                  showDialog(
-                      context: context,
-                      builder: ((context) {
-                        return const Wrong();
-                      }));
-                }
-              },
-              child: Container(
-                  padding: const EdgeInsets.all(20),
-                  decoration: MyColors.buttonBackground(btn_colors.green),
-                  alignment: Alignment.center,
-                  height: 110,
-                  width: 110,
-                  child: Text(
-                    "D. ${widget.answer_4.toString()}",
-                    style: const TextStyle(fontSize: 18, color: Colors.white),
-                  )),
-            ),
-          ])
-        ],
-      ),
+        ])
+      ],
     );
   }
 }
