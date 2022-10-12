@@ -47,28 +47,48 @@ class _Sign_UpState extends State<Sign_Up> {
             height: 25,
           ),
           TextButton(
-              onPressed: () async {
-                try {
-                  var authenticationObject = FirebaseAuth.instance;
-                  UserCredential myUser =
-                      await authenticationObject.createUserWithEmailAndPassword(
-                          email: email.text, password: password.text);
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Added Successfully :)")));
-                } catch (e) {
-                  // print("${e.toString()} Hello ");
-                  // showDialog(
-                  //     context: context,
-                  //     builder: ((context) {
-                  //       return AlertDialog(
-                  //         content: Text("Sorry What Are You Doing"),
-                  //       );
-                  //     }));
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Sorry There is An Error :(")));
-                }
-              },
-              child: Text("Sign up"))
+            onPressed: () async {
+              try {
+                var authenticationObject = FirebaseAuth.instance;
+                UserCredential myUser =
+                    await authenticationObject.createUserWithEmailAndPassword(
+                        email: email.text, password: password.text);
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Added Successfully :)")));
+              } catch (e) {
+                // print("${e.toString()} Hello ");
+                // showDialog(
+                //     context: context,
+                //     builder: ((context) {
+                //       return AlertDialog(
+                //         content: Text("Sorry What Are You Doing"),
+                //       );
+                //     }));
+                ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Sorry There is An Error :(")));
+              }
+            },
+            child: Text("Sign up"),
+          ),
+          TextButton(
+            onPressed: () async {
+              try {
+                var authenticationObject = FirebaseAuth.instance;
+                UserCredential myUser =
+                    await authenticationObject.signInWithEmailAndPassword(
+                        email: email.text, password: password.text);
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text(" Successfully :)")));
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return Home();
+                })));
+              } catch (e) {
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text(" Error :(")));
+              }
+            },
+            child: Text("Log in"),
+          ),
         ],
       ),
     );
