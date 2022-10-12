@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, no_leading_underscores_for_local_identifiers
-
 import 'package:elearning/main.dart';
 import 'package:elearning/shared/images.dart';
 import 'package:flutter/material.dart';

@@ -2,14 +2,19 @@ import 'package:elearning/screens/game.dart';
 import 'package:elearning/screens/onBoarding.dart';
 import 'package:elearning/screens/book.dart';
 import 'package:elearning/screens/quiz.dart';
+import 'package:elearning/screens/sign_up.dart';
 import 'package:elearning/screens/splash.dart';
 import 'package:elearning/screens/video.dart';
 import 'package:elearning/screens/voice.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 import 'Home.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(MaterialApp(
     theme: ThemeData(
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -38,6 +43,8 @@ Map<String, Widget Function(BuildContext)> _myRoutes = {
   "book": (context) => PdfBook(),
   "quiz": (context) => const Quizz(),
   "game": (context) => const Game(),
+  "signup": (context) => Sign_Up(),
+  "home": (context) => Home(),
 };
 
 enum Screens {
@@ -46,6 +53,7 @@ enum Screens {
   book,
   quiz,
   game,
+  signup,
 }
 
 ButtonStyle _buttonStyle = ElevatedButton.styleFrom(

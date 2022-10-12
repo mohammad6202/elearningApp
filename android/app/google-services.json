@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "526651230500",
+    "project_id": "elearn-english-f6b61",
+    "storage_bucket": "elearn-english-f6b61.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526651230500:android:c10870f8b8f7ad243ecbb1",
+        "android_client_info": {
+          "package_name": "com.example.elearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526651230500-kb0r4auvn5vq7c4fb6o923i747qshu6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-LBrmF61dIGSIKvkmC1nk2kRto-6pObk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526651230500-kb0r4auvn5vq7c4fb6o923i747qshu6i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
