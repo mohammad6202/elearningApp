@@ -1,17 +1,16 @@
 import 'package:elearning/Home.dart';
-import 'package:elearning/screens/log_in.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:elearning/screens/sign_up.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+class LogIn extends StatefulWidget {
+  const LogIn({super.key});
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<LogIn> createState() => _LogInState();
 }
 
-class _SignUpState extends State<SignUp> {
-  late TextEditingController _usernameController;
+class _LogInState extends State<LogIn> {
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
 
@@ -19,7 +18,6 @@ class _SignUpState extends State<SignUp> {
 
   @override
   void initState() {
-    _usernameController = TextEditingController();
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
     super.initState();
@@ -27,7 +25,6 @@ class _SignUpState extends State<SignUp> {
 
   @override
   void dispose() {
-    _usernameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
@@ -41,13 +38,10 @@ class _SignUpState extends State<SignUp> {
         child: SingleChildScrollView(
           child: Container(
             width: width * 0.75,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(24.0),
-              ),
-            ),
-            padding: const EdgeInsets.all(16),
+            decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(35))),
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: [
                 const CircleAvatar(
@@ -60,34 +54,14 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 10,
                 ),
                 const Text(
-                  "Register",
-                  style: TextStyle(
-                    fontSize: 24.0,
-                  ),
+                  "Login",
+                  style: TextStyle(fontSize: 25),
                 ),
                 const SizedBox(
-                  height: 16.0,
-                ),
-                TextField(
-                  controller: _usernameController,
-                  decoration: const InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(width: 3, color: Colors.cyan),
-                    ),
-                    contentPadding: EdgeInsets.symmetric(horizontal: 10),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        gapPadding: 20,
-                        borderSide: BorderSide(width: 50)),
-                    prefixIcon: Icon(Icons.person),
-                    label: Text("Username"),
-                  ),
-                ),
-                const SizedBox(
-                  height: 16.0,
+                  height: 20,
                 ),
                 TextField(
                   controller: _emailController,
@@ -116,38 +90,46 @@ class _SignUpState extends State<SignUp> {
                     ),
                     contentPadding: EdgeInsets.symmetric(horizontal: 10),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                        gapPadding: 20,
-                        borderSide: BorderSide(width: 50)),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      gapPadding: 20,
+                      borderSide: BorderSide(width: 50),
+                    ),
                     prefixIcon: Icon(Icons.lock),
                     label: Text("Password"),
                   ),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 16.0,
+                ),
+                Row(
+                  children: const [
+                    SizedBox(
+                      width: 160,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 16.0,
                 ),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.cyan,
-                      shape: const StadiumBorder(),
-                    ),
+                        shape: const StadiumBorder(),
+                        backgroundColor: Colors.cyan),
                     onPressed: isLoading
                         ? null
                         : () async {
-                            setState(() {
-                              isLoading = true;
-                            });
                             try {
+                              setState(() {
+                                isLoading = true;
+                              });
                               FirebaseAuth authObject = FirebaseAuth.instance;
 
-                              UserCredential user = await authObject
-                                  .createUserWithEmailAndPassword(
+                              UserCredential user =
+                                  await authObject.signInWithEmailAndPassword(
                                       email: _emailController.text,
                                       password: _passwordController.text);
-                              user.user!
-                                  .updateDisplayName(_usernameController.text);
                               Navigator.pushReplacement(context,
                                   MaterialPageRoute(builder: (_) => Home()));
                             } on FirebaseAuthException catch (e) {
@@ -174,7 +156,7 @@ class _SignUpState extends State<SignUp> {
                           },
                     child: !isLoading
                         ? const Text(
-                            "Register ",
+                            "Login",
                           )
                         : const CircularProgressIndicator(
                             color: Colors.cyan,
@@ -182,16 +164,14 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 16.0,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Already have an account? ",
-                      style: TextStyle(
-                        color: Colors.grey,
-                      ),
+                      "Do not have an account? ",
+                      style: TextStyle(color: Colors.grey),
                     ),
                     InkWell(
                       onTap: () {
@@ -199,21 +179,22 @@ class _SignUpState extends State<SignUp> {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return const LogIn();
+                              return const SignUp();
                             },
                           ),
                         );
                       },
                       child: const Text(
-                        "Log in",
+                        "Register Now",
                         style: TextStyle(
                           color: Colors.cyan,
                           fontWeight: FontWeight.bold,
+                          fontSize: 12,
                         ),
                       ),
-                    ),
+                    )
                   ],
-                ),
+                )
               ],
             ),
           ),

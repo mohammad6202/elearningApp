@@ -3,6 +3,7 @@ import 'package:elearning/screens/onBoarding.dart';
 import 'package:elearning/screens/book.dart';
 import 'package:elearning/screens/quiz.dart';
 import 'package:elearning/screens/sign_up.dart';
+
 import 'package:elearning/screens/splash.dart';
 import 'package:elearning/screens/video.dart';
 import 'package:elearning/screens/voice.dart';
@@ -43,7 +44,7 @@ Map<String, Widget Function(BuildContext)> _myRoutes = {
   "book": (context) => PdfBook(),
   "quiz": (context) => const Quizz(),
   "game": (context) => const Game(),
-  "signup": (context) => Sign_Up(),
+  "signup": (context) => SignUp(),
   "home": (context) => Home(),
 };
 

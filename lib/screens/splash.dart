@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:elearning/screens/sign_up.dart';
 import 'package:flutter/material.dart';
-
+import 'sign_up.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Home.dart';
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Duration(seconds: 5),
         () => Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) {
-              return Sign_Up();
+              return SignUp();
             })));
   }
 
